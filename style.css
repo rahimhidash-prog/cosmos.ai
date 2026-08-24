@@ -1,0 +1,802 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+    background: #08090d;
+    color: #f5f5f7;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 70px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #1d1f27;
+    background: rgba(8, 9, 13, 0.96);
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #8b5cf6;
+    margin-right: 6px;
+}
+
+.nav-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 75px 0 55px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 7px 13px;
+    border: 1px solid #30234f;
+    border-radius: 999px;
+    color: #a78bfa;
+    background: #120d1f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: #8b5cf6;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 22px auto 0;
+    color: #9ca3af;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   QUICK CONCEPTS
+========================= */
+
+.quick-start {
+    margin-bottom: 45px;
+}
+
+.quick-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.quick-header h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.quick-header p {
+    color: #666a75;
+    font-size: 13px;
+}
+
+
+/* =========================
+   ADD CONCEPT BUTTON
+========================= */
+
+.add-concept-button {
+    flex-shrink: 0;
+
+    border: 1px solid #30234f;
+    border-radius: 12px;
+
+    background: #120d1f;
+    color: #c4b5fd;
+
+    padding: 10px 16px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease;
+}
+
+.add-concept-button:hover {
+    transform: translateY(-2px);
+    background: #191326;
+    border-color: #8b5cf6;
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(139, 92, 246, 0.18);
+}
+
+.add-concept-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   TOPIC GRID
+========================= */
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+
+/* =========================
+   TOPIC CARD
+========================= */
+
+.topic-card {
+    width: 100%;
+    min-height: 135px;
+
+    background: #101116;
+
+    border: 1px solid #242630;
+    border-radius: 16px;
+
+    padding: 18px;
+
+    color: #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-4px);
+
+    background: #15101f;
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 8px 30px rgba(139, 92, 246, 0.15);
+}
+
+.topic-card:active {
+    transform: translateY(-1px);
+}
+
+.topic-icon {
+    display: block;
+    font-size: 27px;
+    margin-bottom: 13px;
+}
+
+.topic-card strong {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.topic-card small {
+    display: block;
+    color: #777b86;
+    font-size: 11px;
+}
+
+
+/* =========================
+   CUSTOM QUICK CONCEPT
+========================= */
+
+.custom-topic-wrapper {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.custom-topic-card {
+    width: 100%;
+}
+
+
+/* =========================
+   DELETE CONCEPT BUTTON
+========================= */
+
+.delete-concept-button {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #30234f;
+    border-radius: 50%;
+
+    background: #120d1f;
+    color: #777b86;
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transform: scale(0.8);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.custom-topic-wrapper:hover .delete-concept-button {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.delete-concept-button:hover {
+    background: #21151a;
+    border-color: #7f3f49;
+    color: #fca5a5;
+    transform: scale(1.08);
+}
+
+.delete-concept-button:focus {
+    opacity: 1;
+    outline: none;
+    border-color: #8b5cf6;
+}
+
+
+/* =========================
+   LEARNING SECTION
+========================= */
+
+.learning-section {
+    margin-bottom: 22px;
+}
+
+.section-heading {
+    margin-bottom: 13px;
+}
+
+.section-heading h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    color: #666a75;
+    font-size: 13px;
+}
+
+
+/* =========================
+   LEARNING MODES
+========================= */
+
+.mode-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.mode {
+    border: 1px solid #242630;
+    background: #101116;
+    color: white;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition: 0.2s;
+}
+
+.mode:hover {
+    border-color: #4c3b72;
+    transform: translateY(-2px);
+}
+
+.mode.active {
+    border-color: #8b5cf6;
+    background: #15101f;
+}
+
+.mode-icon {
+    font-size: 25px;
+}
+
+.mode strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.mode small {
+    color: #858894;
+}
+
+
+/* =========================
+   WORKSPACE
+========================= */
+
+.workspace {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.input-card,
+.response-card {
+    background: #101116;
+    border: 1px solid #242630;
+    border-radius: 18px;
+    padding: 25px;
+    min-height: 360px;
+}
+
+
+/* =========================
+   INPUT CARD
+========================= */
+
+.card-header h2 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.card-header p {
+    color: #858894;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+textarea {
+    width: 100%;
+    height: 190px;
+
+    margin-top: 22px;
+
+    resize: none;
+
+    background: #08090d;
+
+    border: 1px solid #242630;
+    border-radius: 12px;
+
+    padding: 16px;
+
+    color: white;
+
+    font-size: 14px;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+textarea:focus {
+    border-color: #8b5cf6;
+}
+
+textarea::placeholder {
+    color: #555863;
+}
+
+
+/* =========================
+   BOTTOM BAR
+========================= */
+
+.bottom-bar {
+    margin-top: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.example {
+    color: #666a75;
+    font-size: 11px;
+}
+
+.example span {
+    color: #8b5cf6;
+}
+
+.ask-button {
+    border: none;
+    border-radius: 10px;
+
+    background: #8b5cf6;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition: 0.2s;
+}
+
+.ask-button:hover {
+    background: #7c3aed;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   RESPONSE CARD
+========================= */
+
+.response-header {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #242630;
+}
+
+.response-header span {
+    color: #8b5cf6;
+}
+
+.empty-state {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.empty-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    border-radius: 15px;
+
+    background: #191326;
+
+    color: #a78bfa;
+
+    font-size: 25px;
+}
+
+.empty-state h3 {
+    margin-top: 18px;
+    font-size: 15px;
+}
+
+.empty-state p {
+    margin-top: 8px;
+
+    color: #666a75;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   AI RESPONSE
+========================= */
+
+.ai-response {
+    margin-top: 22px;
+
+    color: #d1d5db;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.ai-response h3 {
+    color: white;
+    margin-bottom: 12px;
+}
+
+.ai-response .highlight {
+    color: #a78bfa;
+    font-weight: 700;
+}
+
+.concept-box {
+    background: #15101f;
+
+    border: 1px solid #30234f;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    color: #c4b5fd;
+
+    line-height: 1.7;
+}
+
+.mistake-box {
+    background: #21151a;
+
+    border: 1px solid #5c3038;
+
+    border-radius: 12px;
+
+    padding: 13px;
+
+    color: #fca5a5;
+}
+
+
+/* =========================
+   FUTURE VISION
+========================= */
+
+.future-vision {
+    margin-top: 24px;
+
+    padding: 22px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    background: #101116;
+
+    border: 1px solid #242630;
+
+    border-radius: 16px;
+}
+
+.future-icon {
+    font-size: 25px;
+}
+
+.future-vision h2 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.future-vision p {
+    color: #777b86;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    max-width: 800px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    color: #444752;
+
+    font-size: 12px;
+
+    padding: 45px 0 25px;
+}
+
+.prototype-label {
+    margin-top: 5px;
+    color: #30323a;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .hero {
+        padding: 50px 0 40px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .topic-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mode-selector {
+        grid-template-columns: 1fr;
+    }
+
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ask-button {
+        width: 100%;
+    }
+
+    .future-vision {
+        flex-direction: column;
+    }
+
+    .delete-concept-button {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   QUICK CONCEPT MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .quick-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .add-concept-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .nav-status {
+        display: none;
+    }
+
+}

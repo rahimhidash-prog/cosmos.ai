@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>COSMOS — AI Study Partner</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>✦</span>
+            COSMOS
+        </div>
+
+        <div class="nav-status">
+
+            <span class="status-dot"></span>
+
+            AI Study Partner
+
+        </div>
+
+    </header>
+
+
+
+    <main class="container">
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="badge">
+                ⚡ AI-POWERED LEARNING
+            </div>
+
+
+            <h1>
+
+                Don't just get the answer.<br>
+
+                <span>Understand why.</span>
+
+            </h1>
+
+
+            <p>
+
+                COSMOS helps students learn concepts,
+                test their understanding, and discover
+                the misconceptions behind their mistakes.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             QUICK CONCEPTS
+        ========================== -->
+
+        <section class="quick-start">
+
+
+            <div class="quick-header">
+
+                <div>
+                    <h2>
+                        ⚡ Quick Concepts
+                    </h2>
+
+                    <p>
+                        Pick a concept and start learning instantly.
+                    </p>
+                </div>
+
+
+                <!-- ADD CONCEPT BUTTON -->
+
+                <button class="add-concept-button" onclick="addQuickConcept()" type="button">
+
+                    ＋ Add Concept
+
+                </button>
+
+            </div>
+
+
+
+            <div class="topic-grid" id="topicGrid">
+
+
+                <!-- STRUCTURE OF ATOM -->
+
+                <button class="topic-card" onclick="quickStart(
+                        'teach',
+                        'Explain the structure of an atom and its subatomic particles.'
+                    )">
+
+                    <span class="topic-icon">
+                        ⚛️
+                    </span>
+
+                    <strong>
+                        Structure of Atom
+                    </strong>
+
+                    <small>
+                        Understand the basics
+                    </small>
+
+                </button>
+
+
+
+                <!-- ATOMIC RADIUS -->
+
+                <button class="topic-card" onclick="quickStart(
+                        'teach',
+                        'Explain why atomic radius decreases across a period and increases down a group.'
+                    )">
+
+                    <span class="topic-icon">
+                        📐
+                    </span>
+
+                    <strong>
+                        Atomic Radius
+                    </strong>
+
+                    <small>
+                        Learn the periodic trend
+                    </small>
+
+                </button>
+
+
+
+                <!-- CHEMICAL BONDING -->
+
+                <button class="topic-card" onclick="quickStart(
+                        'teach',
+                        'Explain ionic, covalent and metallic bonding.'
+                    )">
+
+                    <span class="topic-icon">
+                        🧪
+                    </span>
+
+                    <strong>
+                        Chemical Bonding
+                    </strong>
+
+                    <small>
+                        Understand bonding
+                    </small>
+
+                </button>
+
+
+
+                <!-- NEWTON'S LAWS -->
+
+                <button class="topic-card" onclick="quickStart(
+                        'teach',
+                        'Explain Newton\'s three laws of motion with simple examples.'
+                    )">
+
+                    <span class="topic-icon">
+                        ⚡
+                    </span>
+
+                    <strong>
+                        Newton's Laws
+                    </strong>
+
+                    <small>
+                        Master motion
+                    </small>
+
+                </button>
+
+
+
+                <!-- PHOTOSYNTHESIS -->
+
+                <button class="topic-card" onclick="quickStart(
+                        'teach',
+                        'Explain photosynthesis step by step in simple terms.'
+                    )">
+
+                    <span class="topic-icon">
+                        🌱
+                    </span>
+
+                    <strong>
+                        Photosynthesis
+                    </strong>
+
+                    <small>
+                        Learn the process
+                    </small>
+
+                </button>
+
+
+
+                <!-- CELL BIOLOGY -->
+
+                <button class="topic-card" onclick="quickStart(
+                        'teach',
+                        'Explain the structure and functions of a cell.'
+                    )">
+
+                    <span class="topic-icon">
+                        🧬
+                    </span>
+
+                    <strong>
+                        Cell Biology
+                    </strong>
+
+                    <small>
+                        Explore cells
+                    </small>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             LEARNING MODES
+        ========================== -->
+
+        <section class="learning-section">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    How do you want to learn?
+                </h2>
+
+                <p>
+                    Choose a learning mode.
+                </p>
+
+            </div>
+
+
+
+            <div class="mode-selector">
+
+
+                <!-- TEACH -->
+
+                <button class="mode active" onclick="selectMode('teach')">
+
+                    <div class="mode-icon">
+                        🧠
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Teach Me
+                        </strong>
+
+                        <small>
+                            Understand a concept
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+
+                <!-- TEST -->
+
+                <button class="mode" onclick="selectMode('test')">
+
+                    <div class="mode-icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Test Me
+                        </strong>
+
+                        <small>
+                            Challenge your knowledge
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+
+                <!-- MISTAKE -->
+
+                <button class="mode" onclick="selectMode('mistake')">
+
+                    <div class="mode-icon">
+                        🔍
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Find My Mistake
+                        </strong>
+
+                        <small>
+                            Discover misconceptions
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             WORKSPACE
+        ========================== -->
+
+        <section class="workspace">
+
+
+            <!-- INPUT CARD -->
+
+            <div class="input-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2 id="inputTitle">
+                            What do you want to learn?
+                        </h2>
+
+                        <p id="inputDescription">
+                            Enter a topic and COSMOS will help
+                            you understand it.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <textarea id="userInput"
+                    placeholder="Example: Why does atomic radius decrease across a period?"></textarea>
+
+
+
+                <div class="bottom-bar">
+
+
+                    <div class="example">
+
+                        💡 Try:
+
+                        <span id="exampleText">
+                            "Explain photosynthesis simply"
+                        </span>
+
+                    </div>
+
+
+
+                    <button class="ask-button" onclick="askAI()">
+
+                        Ask COSMOS →
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RESPONSE CARD -->
+
+            <div class="response-card">
+
+
+                <div class="response-header">
+
+                    <span>
+                        ✦
+                    </span>
+
+                    <strong>
+                        COSMOS
+                    </strong>
+
+                </div>
+
+
+
+                <div id="response">
+
+
+                    <div class="empty-state">
+
+
+                        <div class="empty-icon">
+                            ✦
+                        </div>
+
+
+                        <h3>
+                            Your explanation will appear here
+                        </h3>
+
+
+                        <p>
+                            Ask a question above and let COSMOS
+                            help you understand it.
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             FUTURE VISION
+        ========================== -->
+
+        <section class="future-vision">
+
+
+            <div class="future-icon">
+                🚀
+            </div>
+
+
+            <div>
+
+                <h2>
+                    What's next?
+                </h2>
+
+
+                <p>
+
+                    COSMOS is currently a functional prototype
+                    demonstrating a misconception-focused learning
+                    system. With access to a full AI model, COSMOS
+                    can evolve into a dynamic tutor that adapts
+                    explanations to each student's reasoning.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            COSMOS • Built for the hackathon with ❤️
+        </p>
+
+        <p class="prototype-label">
+            Functional prototype • AI-ready architecture
+        </p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
